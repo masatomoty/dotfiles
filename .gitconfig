@@ -1,0 +1,17 @@
+[core]
+	excludesfile = /Users/masatomo/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Masatomo Toyama
+	email = masa.70.fg@gmail.com
+
+[ghq]
+	root = ~/dev/src
+
+
+
