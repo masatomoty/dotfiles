@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  sudo: no
+
+  tasks:
+
+    - name: 'be sure homebrew is updated'
+      homebrew: update_homebrew=yes
+
+    - include: tasks/brew-package.yml
+    - include: tasks/brew-cask-package.yml
+
+    - name: 'be sure dotfiles is linked'
+      file: src=~/dotfiles/dotfiles/{{ item.name }} dest=~/{{ item.dest_name if item.dest_name is defined else item.name }} state=link force=yes
+      with_items:
+        - { name: '.vimrc' }
+        - { name: '.tmux.conf' }
+        - { name: '.tmux' }
+        - { name: '.tigrc' }
+        - { name: '.zshenv' }
+        - { name: '.zshrc' }
+        - { name: '.zsh.d/alias.zsh' }
+        - { name: '.zsh.d/etc.zsh' }
+        - { name: '.zsh.d/func.zsh' }
+        - { name: '.zsh.d/fzf-func.zsh' }
+        - { name: '.zsh.d/path.zsh' }
+        - { name: '.zsh.d/zsh-ext.zsh' }
