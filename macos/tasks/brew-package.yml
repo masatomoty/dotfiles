@@ -1,0 +1,21 @@
+- name: 'be sure homebrew packages is installed'
+  homebrew: name={{ item.name }} state={{ item.state|default("latest") }} install_options={{ item.install_options|default() }}
+  with_items:
+    - { name: tmux }
+    - { name: tig }
+    - { name: go }
+    - { name: peco }
+    - { name: zsh }
+    - { name: ag }
+    - { name: direnv }
+    - { name: jq }
+    - { name: wget }
+    - { name: rbenv }
+    - { name: awscli }
+    - { name: packer }
+    - { name: tfenv }
+    - { name: pyenv }
+    - { name: yarn }
+    - { name: goenv }
+    - { name: fzf }
+    - { name: tree }
