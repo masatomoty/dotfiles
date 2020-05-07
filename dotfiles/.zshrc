@@ -19,3 +19,12 @@ source $ZSH/oh-my-zsh.sh
 ## Others
 [ -f $ZSHDIR/alias.zsh ] && . $ZSHDIR/alias.zsh
 [ -f $ZSHDIR/etc.zsh ] && . $ZSHDIR/etc.zsh
+
+export NVM_DIR="/Users/masatomotoyama/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/masatomotoyama/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/masatomotoyama/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/masatomotoyama/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/masatomotoyama/google-cloud-sdk/completion.zsh.inc'; fi

@@ -2,7 +2,9 @@ filetype off
 set number
 set cursorline
 set autoindent
-set tabstop=4
+set tabstop=2
+set shiftwidth=2
+set expandtab
 syntax on
 set wildmenu
 set encoding=utf-8
@@ -17,10 +19,13 @@ set autoread "外部でファイルに変更がされた場合は読みなおす
 set nobackup   " ファイル保存時にバックアップファイルを作らない
 set noswapfile " ファイル編集中にスワップファイルを作らない
 set hlsearch   " 検索文字列をハイライトする"
-set shiftwidth=4
+set langmenu=en_US
+let $LANG = 'en_US'
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 
 " OSのクリップボードをレジスタ指定無しで Yank, Put 出来るようにする
-set clipboard=unnamed,unnamedplus
+set clipboard+=unnamed,unnamedplus,autoselect
 
 set rtp+=~/.fzf
 
@@ -77,6 +82,15 @@ NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 NeoBundle 'junegunn/fzf.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'vim-scripts/vim-auto-save'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'w0rp/ale'
+
+"activate rubocop"
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_mode_map = { 'mode': 'passive',
+            \ 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
 
 " vimrc に記述されたプラグインでインストールされていないものがないかチェックする
 NeoBundleCheck
@@ -84,7 +98,6 @@ call neobundle#end()
 filetype plugin indent on
 set t_Co=256
 colorscheme jellybeans
-
 
 if has('lua')
   NeoBundleLazy 'Shougo/neocomplete.vim', {
