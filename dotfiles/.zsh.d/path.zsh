@@ -5,7 +5,7 @@ export PGDATA=/usr/local/var/postgres
 # nvm
 export NVM_DIR="$HOME/.nvm/bin:$PATH"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#source $(brew --prefix nvm)/nvm.sh
+source $(brew --prefix nvm)/nvm.sh
 export PATH=$PATH:~/.local/bin
 
 # goenv
