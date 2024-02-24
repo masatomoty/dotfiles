@@ -2,16 +2,17 @@ export LDFLAGS="-L/usr/local/opt/zlib/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include"
 
 export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
-export PATH="$PATH:$GOPATH/bin"
+export GOPATH=$HOME/dev
+export PATH="$PATH:$GOP:ATH/bin"
 export PGDATA=/usr/local/var/postgres
+export PATH="$GOPATH/bin:$PATH"
+export GOBIN=$GOPATH/bin
+
+export PATH=$PATH:/usr/local/Cellar/libpq/14.3/bin/:~/bin/
 
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
-
-# goenv
-export PATH="$HOME/.goenv/bin:$PATH"
-eval "$(goenv init -)"
 
 # rbebv
 export PATH="$HOME/.rbenv/bin:$PATH" 
@@ -39,11 +40,6 @@ export PATH="$HOME/.stack/bin:$PATH"
 # pipenv
 # export PIPENV_VENV_IN_PROJECT=true
 # eval "$(pipenv --completion)"
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 # php
 #export PATH="/usr/local/opt/php@7.2/bin:$PATH"
