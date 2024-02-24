@@ -6,7 +6,7 @@ brew "neovim"
 
 # infra
 brew "awscli"
-brew "ecspresso"
+brew "kayac/tap/ecspresso"
 
 # env
 brew "direnv"
@@ -21,6 +21,7 @@ brew "yarn"
 # git
 brew "wget"
 brew "tig"
+brew "ghq"
 
 # search
 brew "fzf"
