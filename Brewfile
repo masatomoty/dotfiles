@@ -14,9 +14,7 @@ brew "rbenv"
 brew "tfenv"
 
 # node
-brew "asdf"
-
-brew "yarn"
+brew "volta"
 
 # git
 brew "wget"
