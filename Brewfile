@@ -35,3 +35,6 @@ brew "zoxide"    # cd
 
 # parser
 brew "jq"
+
+#font
+brew "font-hack-nerd-font"
