@@ -1,3 +1,5 @@
+cask_args appdir: "/Applications"
+
 # shell
 brew "zsh"
 
@@ -15,6 +17,7 @@ brew "tfenv"
 
 # node
 brew "volta"
+brew "yarn"
 
 # git
 brew "wget"
@@ -32,9 +35,14 @@ brew "fd"        # find
 brew "eza"       # ls
 brew "bandwhich" # lsof
 brew "zoxide"    # cd
+brew "ripgrep"   # grep
 
 # parser
 brew "jq"
 
-#font
-brew "font-hack-nerd-font"
+# process
+brew 'procs'
+
+# font
+cask "font-hack-nerd-font"
+
