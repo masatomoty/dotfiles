@@ -1,13 +1,13 @@
 ## Directories
 
 # eza
-alias et="eza -T -L 3 -a -I 'node_modules|.git|.cache' --icons"
+alias et="eza -T -L 2 -a -I 'node_modules|.git|.cache' --icons"
 
 ## override
 alias vi="nvim"
 alias cp="cp -a"
 alias df="df -h"
-alias ls="eza -a -G -x"
+alias ls="eza -a -l -1 -x --color=never"
 
 ## 一文字系
 alias b="bundle"
