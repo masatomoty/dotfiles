@@ -6,3 +6,4 @@ export GITHUB_USERNAME=masatomo-ty
 autoload -Uz compinit
 compinit
 
+. "$HOME/.cargo/env"

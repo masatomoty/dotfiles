@@ -40,64 +40,8 @@ set mouse=n
 "set showtabline=2
 "set noshowmode
 
-" neobundle settings {{{
-if has('vim_starting')
-  set nocompatible
-  " neobundle をインストールしていない場合は自動インストール
-  if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
-    echo "install neobundle..."
-    " vim からコマンド呼び出しているだけ neobundle.vim のクローン
-    :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
-  endif
-  " runtimepath の追加は必須
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-call neobundle#begin(expand('~/.vim/bundle'))
-let g:neobundle_default_git_protocol='https'
-
-" neobundle#begin - neobundle#end の間に導入するプラグインを記載します。
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'haml.zip'                            " Haml/Sass
-NeoBundle 'JavaScript-syntax'                   " JavaScript
-NeoBundle 'jQuery'                              " jQuery
-NeoBundle 'nginx.vim'                           " nginx.conf
-NeoBundle 'joker1007/vim-markdown-quote-syntax' " MarkDown内のコードをハイライト
-NeoBundle 'yuroyoro/vim-python'                 " python
-NeoBundle 'godlygeek/tabular'                   " テキスト整形
-NeoBundle 'yuroyoro/vim-autoclose'              " 閉じ括弧補完
-NeoBundle 'grep.vim'                            " Vimでerepを実行
-NeoBundle 'tpope/vim-fugitive'          " Gitを使う
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-NeoBundle 'junegunn/fzf.vim'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'vim-scripts/vim-auto-save'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'w0rp/ale'
 
 "activate rubocop"
-NeoBundle 'scrooloose/syntastic'
-let g:syntastic_mode_map = { 'mode': 'passive',
-            \ 'active_filetypes': ['ruby'] }
-let g:syntastic_ruby_checkers = ['rubocop']
-
-" vimrc に記述されたプラグインでインストールされていないものがないかチェックする
-NeoBundleCheck
-call neobundle#end()
-filetype plugin indent on
-set t_Co=256
-colorscheme jellybeans
 
 if has('lua')
   NeoBundleLazy 'Shougo/neocomplete.vim', {
@@ -129,7 +73,7 @@ let g:unite_source_grep_command = 'ag'
 let g:unite_source_grep_default_opts = '--nocolor --nogroup'
 let g:unite_source_grep_recursive_opt = ''
 let g:unite_source_grep_max_candidates = 200
- 
+
 " unite-grepのキーマップ
 " 選択した文字列をunite-grep
 " https://github.com/shingokatsushima/dotfiles/blob/master/.vimrc
