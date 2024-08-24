@@ -29,6 +29,9 @@ export NVM_DIR="/Users/masatomotoyama/.nvm"
 # direnv
 eval "$(direnv hook zsh)"
 
+# zoxide
+eval "$(zoxide init zsh --hook prompt )"
+
 # font
 export TERM=xterm-256color
 
