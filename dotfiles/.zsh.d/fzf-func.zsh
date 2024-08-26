@@ -60,7 +60,7 @@ srcf() {
 srcv() {
   dir=$(ghq list > /dev/null | fzf-tmux --reverse +m) &&
     cd $(ghq root)/$dir &&
-    vim .
+    nvim 
 }
 
 srcg() {

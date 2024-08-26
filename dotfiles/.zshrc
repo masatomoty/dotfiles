@@ -11,10 +11,16 @@ export GITHUB_TOKEN=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
 source $ZSH/oh-my-zsh.sh
 [ -f $ZSHDIR/zsh-ext.zsh ] && . $ZSHDIR/zsh-ext.zsh
 
+#$ utility
+[ -f $ZSHDIR/func.zsh ] && . $ZSHDIR/func.zsh
+
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f $ZSHDIR/fzf-func.zsh ] && . $ZSHDIR/fzf-func.zsh
 
 ## Others
 [ -f $ZSHDIR/alias.zsh ] && . $ZSHDIR/alias.zsh
+
+# starship
+eval "$(starship init zsh)"
 

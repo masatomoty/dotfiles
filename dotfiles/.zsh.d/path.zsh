@@ -22,6 +22,10 @@ if [ -d ${HOME}/node_modules/.bin ]; then
   export PATH=${PATH}:${HOME}/node_modules/.bin
 fi
 
+# volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 # nvim
 export NVM_DIR="/Users/masatomotoyama/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

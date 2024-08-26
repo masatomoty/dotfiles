@@ -46,3 +46,11 @@ brew 'procs'
 # font
 cask "font-hack-nerd-font"
 
+# terminal
+brew "starship"
+cask "alacritty"
+brew "zellij"
+
+# zsh
+brew "zsh-completions"
+brew "zsh-autosuggestions"
