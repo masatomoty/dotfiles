@@ -1,0 +1,22 @@
+[font]
+size = 16
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+style = "Regular"
+
+[shell]
+args = ["-l", "-c", "zellij attach --index 0 --create"]
+program = "/bin/zsh"
+
+[window.dimensions]
+columns = 100
+lines = 40
