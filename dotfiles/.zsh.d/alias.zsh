@@ -39,7 +39,9 @@ alias grsh='git reset --soft HEAD^'
 alias gs='git stash'
 alias gsp='git stas pop'
 alias gf='git fetch'
-alias gp='git pull'
+alias gpl='git pull'
+alias gps='git push'
+alias gpsuo="git push --set-upstream origin"
 
 alias cl="column -t"
 alias now='date +"%T"'
