@@ -1,5 +1,5 @@
-peco_search_history() {
-    BUFFER=$(history -n 1 | tac | awk '!a[$0]++' | peco)
+fzf_search_history() {
+    BUFFER=$(fc -ln 1 | fzf --tac --no-sort --query "$LBUFFER")
     if [ -n "$BUFFER" ]; then
         zle accept-line
     else
@@ -7,5 +7,5 @@ peco_search_history() {
     fi
 }
 
-zle -N peco_search_history
-bindkey '^R' peco_search_history
+zle -N fzf_search_history
+bindkey '^R' fzf_search_history
