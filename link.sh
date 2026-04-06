@@ -1,5 +1,10 @@
 #!/bin/bash
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# .gitconfig
+ln -snfv "$SCRIPT_DIR/.gitconfig" ~/.gitconfig
+
 # dotfilesディレクトリに移動
 cd ./dotfiles
 

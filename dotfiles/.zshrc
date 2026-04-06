@@ -1,14 +1,9 @@
-ZSH=~/.oh-my-zsh
-ZSH_THEME="pygmalion"
-plugins=(git)
-
 export GITHUB_TOKEN=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
 
 ## PATH
 [ -f $ZSHDIR/path.zsh ] && . $ZSHDIR/path.zsh
 
-## zsh and oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+## zsh
 [ -f $ZSHDIR/zsh-ext.zsh ] && . $ZSHDIR/zsh-ext.zsh
 
 #$ utility
