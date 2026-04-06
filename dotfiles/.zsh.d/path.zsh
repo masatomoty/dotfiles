@@ -44,3 +44,5 @@ eval "$(zoxide init zsh --hook prompt )"
 # font
 export TERM=xterm-256color
 
+# claude
+export PATH="$HOME/.local/bin:$PATH"
