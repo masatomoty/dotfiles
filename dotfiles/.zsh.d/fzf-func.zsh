@@ -40,14 +40,14 @@ srcn() {
 ### cd to selected src directory
 srcd() {
   local dir
-  dir=$(ghq list > /dev/null | fzf-tmux --reverse +m) &&
+  dir=$(ghq list > /dev/null | fzf --reverse +m) &&
     cd $(ghq root)/$dir
 }
 
 ### Open slected src directry with VisualStudio Code
 srcc() {
   local dir
-  dir=$(ghq list > /dev/null | fzf-tmux --reverse +m) &&
+  dir=$(ghq list > /dev/null | fzf --reverse +m) &&
     cd $(ghq root)/$dir &&
     code .
 }
@@ -58,20 +58,20 @@ srcf() {
 }
 
 srcv() {
-  dir=$(ghq list > /dev/null | fzf-tmux --reverse +m) &&
+  dir=$(ghq list > /dev/null | fzf --reverse +m) &&
     cd $(ghq root)/$dir &&
-    nvim 
+    nvim
 }
 
 srcg() {
   local dir
-  dir=$(ghq list > /dev/null | fzf-tmux --reverse +m) &&
+  dir=$(ghq list > /dev/null | fzf --reverse +m) &&
   open -a Google\ Chrome https://godoc.org/$dir
 }
 
 srch() {
   local dir
-  dir=$(ghq list > /dev/null | fzf-tmux --reverse +m) &&
+  dir=$(ghq list > /dev/null | fzf --reverse +m) &&
   open -a Google\ Chrome https://$dir
 }
 
@@ -80,7 +80,7 @@ sssh() {
   local servers server
   servers=$(grep -iE "^host[[:space:]]+[^*]" ~/.ssh/config | awk "{print \$2}") &&
   server=$(echo "$servers" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$servers") )) +m) &&
+           fzf +m) &&
   echo "ssh to $server ...\n" && ssh $(echo "$server")
 }
 
@@ -88,7 +88,7 @@ sssf() {
   local servers server
   servers=$(grep -iE "^host[[:space:]]+[^*]" ~/.ssh/config | awk "{print \$2}") &&
   server=$(echo "$servers" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$servers") )) +m) &&
+           fzf +m) &&
   print -z $server
 }
 
@@ -116,7 +116,7 @@ fdp() {
       get_parent_dirs $(dirname "$1")
     fi
   }
-  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf-tmux --tac)
+  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf --tac)
   cd "$DIR"
 }
 
@@ -145,7 +145,7 @@ fbr() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+           fzf +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
@@ -160,7 +160,7 @@ fco() {
     sort -u          | awk '{print "\x1b[34;1mbranch\x1b[m\t" $1}') || return
   target=$(
     (echo "$tags"; echo "$branches") |
-    fzf-tmux -l30 -- --no-hscroll --ansi +m -d "\t" -n 2) || return
+    fzf --no-hscroll --ansi +m -d "\t" -n 2) || return
   git checkout $(echo "$target" | awk '{print $2}')
 }
 
