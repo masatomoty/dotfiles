@@ -15,6 +15,7 @@ brew 'direnv'
 brew 'rbenv'
 brew 'tfenv'
 brew 'pyenv'
+brew 'pipx'
 
 # node
 brew 'volta'
@@ -50,7 +51,11 @@ cask 'font-hack-nerd-font'
 # terminal
 brew 'starship'
 cask 'alacritty'
+cask 'ghostty'
 brew 'zellij'
+
+# tunnel
+cask 'ngrok'
 
 # zsh
 brew 'zsh-completions'
