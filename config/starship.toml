@@ -1,5 +1,8 @@
 scan_timeout = 10
 
+[python]
+disabled = true
+
 [character]
 error_symbol = "[❯](bold red)"
 success_symbol = "[❯](bold green)"
